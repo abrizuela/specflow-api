@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+using System;
+using Microsoft.Extensions.Configuration;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Infrastructure;
 
@@ -15,8 +16,11 @@ namespace SpecFlowAPI
 
         private static GlobalSettings CreateConfiguration()
         {
-            var config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+			var environmentName = Environment.GetEnvironmentVariable("Spotify__Environment") ?? "local";
+
+			var config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true) //load base settings
+                .AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: true) //load environment settings
                 .AddEnvironmentVariables()
                 .Build()
                 .Get<GlobalSettings>();
