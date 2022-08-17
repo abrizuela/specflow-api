@@ -372,8 +372,8 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Automation files
-src/**/Features/**/*.[Ff]eature.cs
-src/**/appsettings.local.json 
+**/Features/**/*.[Ff]eature.cs
+**/appsettings.local.json
 
 #Jetbrains Rider Configuration
 .idea
