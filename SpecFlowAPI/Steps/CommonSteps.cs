@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowAPI.Steps
@@ -10,20 +10,20 @@ namespace SpecFlowAPI.Steps
         {
         }
 
-        #region GIVEN
-        #endregion
+		#region GIVEN
+		#endregion
 
-        #region THEN
+		#region WHEN
+		#endregion
 
-        [Then(@"the status code should be '(.*)'")]
-        public void ThenTheStatusCodeShouldBe(HttpStatusCode statusCode)
-        {
-            ResponseStatusCodeIs(statusCode);
-        }
+		#region THEN
 
-        #endregion
+		[Then(@"the status code should be '(.*)'")]
+		public void ThenTheStatusCodeShouldBe(HttpStatusCode statusCode)
+		{
+			ResponseStatusCodeIs(statusCode);
+		}
 
-        #region THEN
-        #endregion
-    }
+		#endregion
+	}
 }

@@ -1,4 +1,4 @@
-﻿using RestSharp;
+using RestSharp;
 
 namespace SpecFlowAPI
 {

@@ -1,4 +1,4 @@
-﻿using RestSharp;
+using RestSharp;
 using System.Text.Json;
 
 namespace SpecFlowAPI

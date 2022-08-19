@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -11,7 +11,7 @@ namespace SpecFlowAPI
     {
         private readonly SpotifyPlaylistsService _spotifyPlaylistsService;
 
-        private string _playlistId;
+        private string? _playlistId;
 
 
         public SpotifyPlaylistsServiceSteps(Helper helper, ServicesDriver driver, SpotifyPlaylistsService spotifyService) : base(helper, driver)
@@ -41,7 +41,7 @@ namespace SpecFlowAPI
         [Given(@"a nonexistent playlist Id is populated")]
         public void GivenANonexistentPlaylistIdIsPopulated()
         {
-            _playlistId = Helper.Faker.Random.AlphaNumeric(22);
+            _playlistId = Helper.GenerateFakeListId();
         }
 
         #endregion
@@ -57,7 +57,7 @@ namespace SpecFlowAPI
         [When(@"Get Playlist operation is executed")]
         public void WhenGetPlaylistOperationIsExecuted()
         {
-            Response = _spotifyPlaylistsService.GetPlaylist(_playlistId);
+            Response = _spotifyPlaylistsService.GetPlaylist(_playlistId!);
         }
 
         #endregion

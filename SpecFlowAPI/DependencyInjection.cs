@@ -1,4 +1,4 @@
-﻿using BoDi;
+using BoDi;
 using Bogus;
 
 namespace SpecFlowAPI

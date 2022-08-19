@@ -4,7 +4,7 @@ Framework to automate API testing using SpecFlow
 
 To start to work in Automation you should add the following extension:
 
-- **Speckflow** integration for visual studio.
+- **Specflow** integration for visual studio.
 
 ## Run the tests from Visual Studio
 
