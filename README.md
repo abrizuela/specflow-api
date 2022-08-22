@@ -58,7 +58,7 @@ The report name is like `TestResult_[UserName]\_[MachineName]_yyyymmdd_HHmmss`.
 
 ### **Example**
 
-Example to run all the ***smoke*** tests in ***dev*** with the ***public*** endpoints and creating a report
+Example to run all the ***get*** tests in ***local*** and creating a report
 
 ```bash
 dotnet test SpecFlowAPI.sln --settings SpecFlowAPI\local.runsettings --filter Category=get --logger html

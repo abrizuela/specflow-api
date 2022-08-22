@@ -3,12 +3,12 @@ using TechTalk.SpecFlow;
 
 namespace SpecFlowAPI.Steps
 {
-    [Binding]
-    public class CommonSteps : ServiceStepsBase
-    {
-        public CommonSteps(Helper helper, ServicesDriver servicesDriver) : base(helper, servicesDriver)
-        {
-        }
+	[Binding]
+	public class CommonSteps : ServiceStepsBase
+	{
+		public CommonSteps(Helper helper, ServicesDriver servicesDriver) : base(helper, servicesDriver)
+		{
+		}
 
 		#region GIVEN
 		#endregion
