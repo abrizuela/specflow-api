@@ -13,6 +13,7 @@ namespace SpecFlowAPI
 			get => Driver.ServiceResponse;
 			set => Driver.ServiceResponse = value;
 		}
+		public string? PlaylistId { get; set; }
 
 		public ServiceStepsBase(Helper helper, ServicesDriver driver)
 		{

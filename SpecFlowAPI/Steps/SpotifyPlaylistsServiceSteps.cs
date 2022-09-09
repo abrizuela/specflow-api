@@ -9,9 +9,6 @@ namespace SpecFlowAPI
 	{
 		private readonly SpotifyPlaylistsService _spotifyPlaylistsService;
 
-		private string? _playlistId;
-
-
 		public SpotifyPlaylistsServiceSteps(Helper helper, ServicesDriver driver, SpotifyPlaylistsService spotifyService) : base(helper, driver)
 		{
 			_spotifyPlaylistsService = spotifyService;
@@ -33,13 +30,13 @@ namespace SpecFlowAPI
 			ResponseStatusCodeIs(HttpStatusCode.OK);
 			var playlists = Response!.GetContent<PlaylistReponseModel>()!.Items;
 			_ = playlists!.Count.Should().BeGreaterThan(0, because: "should be at least a public playlist created by the user");
-			_playlistId = Helper.Faker.PickRandom(playlists).Id;
+			PlaylistId = Helper.Faker.PickRandom(playlists).Id;
 		}
 
 		[Given(@"a nonexistent playlist Id is populated")]
 		public void GivenANonexistentPlaylistIdIsPopulated()
 		{
-			_playlistId = Helper.GenerateFakeListId();
+			PlaylistId = Helper.GenerateFakeListId();
 		}
 
 		#endregion
@@ -55,7 +52,7 @@ namespace SpecFlowAPI
 		[When(@"Get Playlist operation is executed")]
 		public void WhenGetPlaylistOperationIsExecuted()
 		{
-			Response = _spotifyPlaylistsService.GetPlaylist(_playlistId!);
+			Response = _spotifyPlaylistsService.GetPlaylist(PlaylistId!);
 		}
 
 		#endregion
